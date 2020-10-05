@@ -32,12 +32,12 @@ public class CourseFacadeTest {
     }
 
     @Test
-    public void testGetAllCoursesMustGiveSizeOfThree() {
+    public void testGetAllCoursesMustGiveSizeOfThreeOutOfFourSinceOneIsDisabled() {
         // Arrange
         int expected = 3;
         // Act
         int result = facade.getAllCourses().size();
         // Assert
-        assertEquals(expected, result, "Expects four rows in the database but only retrieving three since one is disabled");
+        assertEquals(expected, result);
     }
 }

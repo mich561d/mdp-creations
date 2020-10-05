@@ -4,10 +4,10 @@ import java.io.Serializable;
 import entities.Course;
 
 public class CourseDTO implements Serializable {
-    
-    private String name;
-    private String shortName;
-    private String link;
+
+    private final String name;
+    private final String shortName;
+    private final String link;
 
     public CourseDTO(Course course) {
         this.name = course.getName();

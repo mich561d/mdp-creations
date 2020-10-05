@@ -1,6 +1,8 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
@@ -24,9 +27,11 @@ public class Course implements Serializable {
     private String name;
     @Column(length = 5, nullable = false, unique = true)
     private String shortName;
-    @Column(length = 255, nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String link;
     private boolean active;
+    @OneToMany(mappedBy = "course")
+    private List<LearningObjective> learningObjectives;
 
     public Course() {
     }
@@ -36,13 +41,15 @@ public class Course implements Serializable {
         this.shortName = shortName;
         this.link = link;
         this.active = true;
+        this.learningObjectives = new ArrayList();
     }
-    
+
     public Course(String name, String shortName, String link, boolean active) {
         this.name = name;
         this.shortName = shortName;
         this.link = link;
         this.active = active;
+        this.learningObjectives = new ArrayList();
     }
 
     public Long getId() {
@@ -67,5 +74,15 @@ public class Course implements Serializable {
 
     public boolean isActive() {
         return active;
+    }
+
+    public void addLearningObjective(LearningObjective learningObjective) {
+        if (learningObjective != null) {
+            learningObjectives.add(learningObjective);
+        }
+    }
+
+    public List<LearningObjective> getLearningObjectives() {
+        return learningObjectives;
     }
 }

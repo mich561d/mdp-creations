@@ -32,7 +32,6 @@ public class EMF_Creator {
 
     private static EntityManagerFactory createEntityManagerFactory(boolean isTest) {
 
-        
         boolean isDeployed = (System.getenv("DEPLOYED") != null);
         if (isDeployed) {
             /* Strategy for deployment */
@@ -63,16 +62,16 @@ public class EMF_Creator {
         }
         EntityManagerFactory emf = null;
         try {
-         emf =  Persistence.createEntityManagerFactory(puName, null);
-       
-        } catch (javax.persistence.PersistenceException ex){
+            emf = Persistence.createEntityManagerFactory(puName, null);
+
+        } catch (javax.persistence.PersistenceException ex) {
             System.out.println("##########################################################");
             System.out.println("######      ERROR Creating a persistence Unit       ######");
             System.out.println("###### Have you started the dev and test databases? ######");
             System.out.println("######          (docker-compose up -d )             ######");
             System.out.println("##########################################################");
-            throw ex; 
+            throw ex;
         }
-         return emf;
+        return emf;
     }
 }
