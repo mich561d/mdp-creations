@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>mdp-creations</groupId>
-    <artifactId>mdp-creations</artifactId>
-    <version>1.3.0</version>
+    <artifactId>mdp-learning-objectives</artifactId>
+    <version>1.3.1</version>
     <packaging>war</packaging>
 
-    <name>mdp-creations</name>
+    <name>mdp-learning-objectives</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
