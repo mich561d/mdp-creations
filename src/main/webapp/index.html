@@ -1,10 +1,174 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>API Documentation</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+        <link href="CSS/general-styles.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Change or remove this page</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="mdp-header font-weight-bold" id="top-point">Learning Objective API Documentation</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="card bg-light">
+                        <h5 class="card-header font-weight-bold">Table of Content</h5>
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <span class="list-group-item font-weight-bold">Course</span>
+                            <a class="list-group-item list-group-item-action active font-weight-bold" id="list-01-list" data-toggle="list" href="#list-01" role="tab"><span class="badge badge-success">GET</span> Get all courses</a>
+                            <span class="list-group-item font-weight-bold">Learning Objective</span>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-02-list" data-toggle="list" href="#list-02" role="tab"><span class="badge badge-success">GET</span> Get single learning objective by id</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-03-list" data-toggle="list" href="#list-03" role="tab"><span class="badge badge-success">GET</span> Get single learning objective by random</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-04-list" data-toggle="list" href="#list-04" role="tab"><span class="badge badge-success">GET</span> Get all learning objectives</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-05-list" data-toggle="list" href="#list-05" role="tab"><span class="badge badge-success">GET</span> Get all learning objectives by course id</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-06-list" data-toggle="list" href="#list-06" role="tab"><span class="badge badge-success">GET</span> Get all learning objectives by course short name</a>
+                            <span class="list-group-item font-weight-bold">To do's</span>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-post-list" data-toggle="list" href="#list-post" role="tab"><span class="badge badge-warning">POST</span> Add course</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-post-list" data-toggle="list" href="#list-post" role="tab"><span class="badge badge-warning">POST</span> Add learning objective</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-put-list" data-toggle="list" href="#list-put" role="tab"><span class="badge badge-primary">PUT</span> update course</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-put-list" data-toggle="list" href="#list-put" role="tab"><span class="badge badge-primary">PUT</span> update learning objective</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-get-list" data-toggle="list" href="#list-get" role="tab"><span class="badge badge-success">GET</span> Disable course</a>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-get-list" data-toggle="list" href="#list-get" role="tab"><span class="badge badge-success">GET</span> Enable course</a>
+                            <span class="list-group-item font-weight-bold">Templates</span>
+                            <a class="list-group-item list-group-item-action font-weight-bold" id="list-delete-list" data-toggle="list" href="#list-delete" role="tab"><span class="badge badge-danger">DEL</span> Delete Test</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-7">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-01" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get all courses</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves all <b>active</b> courses.</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/course/all">/api/course/all</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: [ { "name": "name", "shortName": "shortName", "link": "link" } ]</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="list-02" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get single learning objective by id</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves a single learning objective by learning objective id.</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/learning-objective/1">/api/learning-objective/{id}</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: { "course": { "name": "name", "shortName": "shortName", "link": "link" }, "question": "question" }</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 404 Not Found<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="list-03" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get single learning objective by random</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves a single learning objective by random</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/learning-objective/random">/api/learning-objective/random</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: { "course": { "name": "name", "shortName": "shortName", "link": "link" }, "question": "question" }</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="list-04" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get all learning objectives</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves all learning objectives</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/learning-objective/all">/api/learning-objective/all</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: { "learningObjectiveDTOs": [ { "course": { "name": "name", "shortName": "shortName", "link": "link" }, "question": "question" } ] }</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="list-05" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get all learning objectives by course id</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves all learning objectives by course id</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/learning-objective/allByCourseId/1">/api/learning-objective/allByCourseId/{courseId}</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: { "learningObjectiveDTOs": [ { "course": { "name": "name", "shortName": "shortName", "link": "link" }, "question": "question" } ] }</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 404 Not Found<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="list-06" role="tabpanel">
+                            <div class="card bg-light">
+                                <h5 class="card-header font-weight-bold"><span class="badge badge-success">GET</span> Get all learning objectives by course short name</h5>
+                                <div class="card-body">
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Description</h6>
+                                    <p class="card-text">Retrieves all learning objectives by course short name</p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">URL</h6>
+                                    <p><a href="http://localhost:8080/jpareststarter/api/learning-objective/allByCourseShortName/TST">/api/learning-objective/allByCourseShortName/{courseShortName}</a></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Headers</h6>
+                                    <p><code>Content-type: application/json</code><br><code>Accept: application/json</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Body</h6>
+                                    <p><code>No body</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Response</h6>
+                                    <p><code>Status: 200 OK<br>Body: { "learningObjectiveDTOs": [ { "course": { "name": "name", "shortName": "shortName", "link": "link" }, "question": "question" } ] }</code></p>
+                                    <h6 class="card-subtitle mb-2 text-muted font-weight-bold">Errors</h6>
+                                    <p><code>Status: 500 Internal Server Error<br>Body: { "statusCode": statusCode, "reasonPhrase": "reasonPhrase" }</code></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list-get" role="tabpanel">Get test</div>
+                        <div class="tab-pane fade" id="list-post" role="tabpanel">Post test</div>
+                        <div class="tab-pane fade" id="list-put" role="tabpanel">Put test</div>
+                        <div class="tab-pane fade" id="list-delete" role="tabpanel">Delete test</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="JS/general-functionality.js" type="text/javascript"></script>
     </body>
 </html>
