@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/mich561d/mdp-creations.svg?branch=master)](https://travis-ci.com/mich561d/mdp-creations)
+[![Build Status](https://travis-ci.com/mich561d/mdp-learning-objectives.svg?branch=master)](https://travis-ci.com/mich561d/mdp-learning-objectives)
 
 # www.mdp-creations.dk
 
